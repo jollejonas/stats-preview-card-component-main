@@ -1,0 +1,94 @@
+$veryvdarkblue: hsl(233, 47%, 7%);
+$darkdsatblue: hsl(244, 38%, 16%);
+$softviolet: hsl(277, 64%, 61%);
+$softvioletopaque: hsla(277, 70%, 50%, 0.40);
+$white: hsl(0, 0%, 100%);
+$slighttransparentp: hsla(0, 0%, 100%, 0.75);
+$slighttransparenth: hsla(0, 0%, 100%, 0.6);
+$mainfont: "Inter", sans-serif;
+$statsfont: "Lexend Deca", sans-serif;
+body {
+    background-color: $veryvdarkblue;
+}
+
+.card-container {
+    margin: 40px auto;
+    width: 325px;
+    background-color: $darkdsatblue;
+    border-radius: 10px;
+
+    .image {
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px 10px 0 0;
+            background-color: $softvioletopaque;
+            width: 100%;
+            height: 99%;
+        }
+    }
+
+    .content {
+        margin: 30px 30px 0 40px;
+        h1 {
+            color: $white;
+            font-family: $mainfont;
+            font-size: 26px;
+            text-align: center;
+
+            #violet {
+                color: $softviolet;
+            }
+        }
+
+        .main-paragraph {
+            color: $slighttransparentp;
+            font-family: $mainfont;
+            text-align: center;
+            font-size: 15px;
+            line-height: 26px;
+        }
+
+        .three-col {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+
+            .two-elements{
+                width: 100%;
+
+                p, h2{
+                    text-align: center;
+                    margin: 10px;
+                }
+                
+                h2{
+                    color:$white;
+                    font-family: $mainfont;
+                }
+                p{
+                    text-transform: uppercase;
+                    color: $slighttransparenth;
+                    font-weight: 300;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    font-family: $statsfont;
+                }
+            }
+        }
+    }
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

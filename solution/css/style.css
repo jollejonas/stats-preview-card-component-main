@@ -7,14 +7,22 @@ body {
   width: 325px;
   background-color: #1b1938;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .card-container .image {
   position: relative;
 }
 .card-container .image img {
   width: 100%;
-  height: 100%;
+  height: 98%;
   border-radius: 10px 10px 0 0;
+}
+.card-container .image #phone {
+  display: block;
+}
+.card-container .image #desktop {
+  display: none;
 }
 .card-container .image .overlay {
   position: absolute;
@@ -23,7 +31,7 @@ body {
   border-radius: 10px 10px 0 0;
   background-color: rgba(148, 38, 217, 0.4);
   width: 100%;
-  height: 99%;
+  height: 100%;
 }
 .card-container .content {
   margin: 30px 30px 0 40px;
@@ -52,7 +60,8 @@ body {
 .card-container .content .three-col .two-elements {
   width: 100%;
 }
-.card-container .content .three-col .two-elements p, .card-container .content .three-col .two-elements h2 {
+.card-container .content .three-col .two-elements p,
+.card-container .content .three-col .two-elements h2 {
   text-align: center;
   margin: 10px;
 }
@@ -72,10 +81,69 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .attribution a {
   color: #3e52a3;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 400px) {
+  .card-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1100px;
+    flex-direction: row-reverse;
+    height: 450px;
+    margin: -250px 0 0 -550px;
+  }
+  .card-container .image {
+    width: 50%;
+  }
+  .card-container .image img {
+    border-radius: 0 10px 10px 0;
+    height: 100%;
+  }
+  .card-container .image #phone {
+    display: none;
+  }
+  .card-container .image #desktop {
+    display: block;
+  }
+  .card-container .image .overlay {
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+  }
+  .card-container .content {
+    width: 50%;
+    margin: 50px 0 0 70px;
+  }
+  .card-container .content h1 {
+    width: 400px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+    text-align: left;
+  }
+  .card-container .content .main-paragraph {
+    width: 350px;
+    text-align: left;
+  }
+  .card-container .content .three-col {
+    flex-direction: row;
+    width: 415px;
+  }
+  .card-container .content .three-col .two-elements p, .card-container .content .three-col .two-elements h2 {
+    text-align: left;
+  }
+  .card-container .content .three-col .two-elements h2 {
+    margin: 40px 0 0 0;
+  }
+  .card-container .content .three-col .two-elements p {
+    margin: 10px 0 0 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

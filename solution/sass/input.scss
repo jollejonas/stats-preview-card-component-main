@@ -1,7 +1,7 @@
 $veryvdarkblue: hsl(233, 47%, 7%);
 $darkdsatblue: hsl(244, 38%, 16%);
 $softviolet: hsl(277, 64%, 61%);
-$softvioletopaque: hsla(277, 70%, 50%, 0.40);
+$softvioletopaque: hsla(277, 70%, 50%, 0.4);
 $white: hsl(0, 0%, 100%);
 $slighttransparentp: hsla(0, 0%, 100%, 0.75);
 $slighttransparenth: hsla(0, 0%, 100%, 0.6);
@@ -16,22 +16,33 @@ body {
     width: 325px;
     background-color: $darkdsatblue;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 
     .image {
         position: relative;
         img {
             width: 100%;
-            height: 100%;
+            height: 98%;
             border-radius: 10px 10px 0 0;
         }
-        .overlay{
+
+        #phone {
+            display: block;
+        }
+
+        #desktop {
+            display: none;
+        }
+
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             border-radius: 10px 10px 0 0;
             background-color: $softvioletopaque;
             width: 100%;
-            height: 99%;
+            height: 100%;
         }
     }
 
@@ -61,19 +72,20 @@ body {
             flex-direction: column;
             padding: 20px 0;
 
-            .two-elements{
+            .two-elements {
                 width: 100%;
 
-                p, h2{
+                p,
+                h2 {
                     text-align: center;
                     margin: 10px;
                 }
-                
-                h2{
-                    color:$white;
+
+                h2 {
+                    color: $white;
                     font-family: $mainfont;
                 }
-                p{
+                p {
                     text-transform: uppercase;
                     color: $slighttransparenth;
                     font-weight: 300;
@@ -88,7 +100,78 @@ body {
 .attribution {
     font-size: 11px;
     text-align: center;
+    color: $slighttransparentp
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
+
+@media screen and(min-width: 400px) {
+    .card-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1100px;
+        flex-direction: row-reverse;
+        height: 450px;
+        margin: -250px 0 0 -550px;
+
+        .image {
+            width: 50%;
+            img {
+                border-radius: 0 10px 10px 0;
+                height: 100%;
+            }
+
+            #phone {
+                display: none;
+            }
+
+            #desktop {
+                display: block;
+            }
+            .overlay {
+                height: 100%;
+                border-radius: 0 10px 10px 0;
+            }
+        }
+        .content {
+            width: 50%;
+            margin: 50px 0 0 70px;
+            
+            h1 {
+                width: 400px;
+                color: $white;
+                font-family: $mainfont;
+                font-size: 36px;
+                text-align: left;
+            }
+
+            .main-paragraph{
+                width: 350px;
+                text-align: left;
+            }
+
+            .three-col {
+                flex-direction: row;
+                width: 415px;
+
+                .two-elements{
+
+                    p, h2{
+                        text-align: left;
+                    }
+
+                    h2{
+                        margin: 40px 0 0 0;
+                    }
+
+                    p{
+                        margin: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
 }
